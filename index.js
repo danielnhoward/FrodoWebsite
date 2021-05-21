@@ -7,7 +7,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    req.get('Host') == 'frodowebsite.herokuapp.com' ? res.redirect(`https://snakeee.xyz${req.url}`) : next();
+    req.get('Host') == 'frodowebsite.herokuapp.com' ? res.redirect(`https://frodo.fun${req.url}`) : next();
 });
 
 app.get('/*', (req, res) => {
