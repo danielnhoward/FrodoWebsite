@@ -2,6 +2,10 @@ const app = require('express')();
 const server = require('http').createServer(app);
 const fs = require('fs');
 
+app.use((req, res, next) => {
+    req.url == 'frodowebsite.herokuapp.com' ? res.redirect('frodo.fun') : next();
+});
+
 app.get('/*', (req, res) => {
     let readFile = true;
     let url = req.url.split('?')[0];
