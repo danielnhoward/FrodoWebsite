@@ -3,7 +3,11 @@ const server = require('http').createServer(app);
 const fs = require('fs');
 
 app.use((req, res, next) => {
-    req.url == 'frodowebsite.herokuapp.com' ? res.redirect('frodo.fun') : next();
+    req.get('X-Forwarded-Proto') !== 'https' && req.get('Host') == 'frodo.fun' ? res.redirect(`https://${req.get('Host')}${req.url}`) : next();
+});
+
+app.use((req, res, next) => {
+    req.get('Host') == 'frodowebsite.herokuapp.com' ? res.redirect(`https://snakeee.xyz${req.url}`) : next();
 });
 
 app.get('/*', (req, res) => {
