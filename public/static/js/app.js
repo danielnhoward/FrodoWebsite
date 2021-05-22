@@ -8,3 +8,8 @@ const $ = (id) => document.getElementById(id);
     });
     status.innerHTML != 'Online' ? status.innerHTML = 'Offline' : null;
 })();
+
+$('inviteBtn').addEventListener('click', (ev) => {
+    ev.preventDefault();
+    open($('inviteBtn').href, 'Invite Frodo', 'width=400, height=500');
+});

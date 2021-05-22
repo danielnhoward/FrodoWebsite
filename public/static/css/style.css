@@ -16,6 +16,7 @@ a {
 section {
     height: 100vh;
     width: calc(100vw - (100vw - 100%));
+    position: relative;
 }
 
 body {
@@ -49,17 +50,39 @@ body {
     font-size: 20px;
 }
 
+.nav div {
+    display: inherit;
+}
 nav {
     position: sticky;
     top: 10px;
     color: #209cff;
     padding-left: 10px;
+    display: inline-block;
+    width: calc(100vw - (100vw - 100%) - 10px);
+    z-index: 10;
 }
 .nav-item {
-
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .nav-right {
     float: right;
+}
+.nav-button {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+button {
+    border: 0;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #209cff;
+    mix-blend-mode: difference;
 }
 
 ::-webkit-scrollbar {
@@ -71,11 +94,15 @@ nav {
 }
   
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: rgba(80, 80, 80, 0);
+    border-radius: 10px;
+}
+body:hover::-webkit-scrollbar-thumb {
+    background: rgba(80, 80, 80, 0.5);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: rgba(50, 50, 50, 0.5);
 }
 ::-webkit-scrollbar-thumb:active {
-    background: #222;
+    background: rgba(20, 20, 20, 0.5);
 }
