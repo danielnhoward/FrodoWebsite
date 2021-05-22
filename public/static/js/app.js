@@ -11,5 +11,5 @@ const $ = (id) => document.getElementById(id);
 
 $('inviteBtn').addEventListener('click', (ev) => {
     ev.preventDefault();
-    open($('inviteBtn').href, 'Invite Frodo', 'width=400, height=500');
+    open($('inviteBtn').href, 'Invite Frodo', 'width=600, height=800');
 });

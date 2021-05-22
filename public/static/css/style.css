@@ -15,8 +15,43 @@ a {
 }
 section {
     height: 100vh;
+    overflow: hidden;
     width: calc(100vw - (100vw - 100%));
-    position: relative;
+}
+section .sub {
+    width: 50vw;
+    float: left;
+    text-align: center;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+}
+section .sub:nth-of-type(odd) {
+    width: 30vw;
+    margin-right: 20px;
+    margin-left: calc(20vw - 20px);
+}
+section .sub:nth-of-type(even) {
+    width: 30vw;
+    margin-left: 20px;
+    margin-right: calc(20vw - 20px);
+}
+@media only screen and (max-width: 700px) {
+    section {
+        min-height: 100vh;
+        height: fit-content;
+    }
+    section .sub:nth-of-type(n) {
+        margin: calc(10vw);
+        width: 80vw;
+        display: block;
+        transform: translateX(0);
+    }
+    section .sub:nth-of-type(odd) {
+        margin-bottom: 10px;
+    }
+    section .sub:nth-of-type(even) {
+        margin-top: 10px;
+    }
 }
 
 body {
@@ -25,10 +60,6 @@ body {
     overflow: overlay;
 }
 .center {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -39,8 +70,14 @@ body {
     margin: 20px;
     width: 400px;
 }
+.frodoPreview {
+    width: 400px;
+}
 @media only screen and (max-width: 400px) {
     .logo-main {
+        width: 70vw;
+    }
+    .frodoPreview {
         width: 70vw;
     }
 }
