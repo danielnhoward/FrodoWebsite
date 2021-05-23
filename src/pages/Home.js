@@ -1,6 +1,5 @@
 import FirstSection from "./Home/sectionOne.js";
-import Section from "./Home/section.js";
-
+import Section from "./Home/Section.js";
 
 export default function Home() {
     return (
