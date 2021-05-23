@@ -41,8 +41,11 @@ h1 {
     margin: 20px;
     width: 400px;
 }
+.frodoPreview {
+    width: 400px;
+}
 @media only screen and (max-width: 400px) {
-    .logo-main {
+    .logo-main, .frodoPreview {
         width: 70vw;
     }
 }
@@ -57,7 +60,7 @@ h1 {
 section {
     height: 100vh;
     overflow: hidden;
-    width: calc(100vw - (100vw - 100%));
+    width: 100vw;
 }
 section part {
     display: flex;

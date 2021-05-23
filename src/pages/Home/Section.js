@@ -19,7 +19,7 @@ export default function Section(props) {
     let section = [];
     return (
         <section>
-            <Grid container spacing={5}>
+            <Grid style={{width: '100%'}} container spacing={5}>
                 <Grid item xs={0} sm={0} lg={2}></Grid>
                 <Grid className={classes.part} item sm={12} xs={12} lg={4}>
                     <part>
