@@ -8,6 +8,7 @@ export default function FirstSection() {
     );
 };
 
+
 function BotStatus() {
     return (
         <div className="frodoStats">

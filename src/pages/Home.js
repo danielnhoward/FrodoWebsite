@@ -1,6 +1,7 @@
 import FirstSection from "./Home/sectionOne.js";
 import Section from "./Home/section.js";
 
+
 export default function Home() {
     return (
         <div>
