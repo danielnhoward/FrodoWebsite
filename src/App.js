@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home.js';
+// eslint-disable-next-line
 import NavBar from './components/NavBar.js';
 import './style.scss';
 import BMC from './components/BMC.js';
