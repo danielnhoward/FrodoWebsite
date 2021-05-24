@@ -1,5 +1,4 @@
 body {
-    background-attachment: fixed;
     overflow: overlay;
 }
 * {
@@ -77,6 +76,7 @@ section {
     height: 100vh;
     overflow: hidden;
     width: 100vw;
+    background-attachment: fixed;
 }
 section part {
     display: flex;
