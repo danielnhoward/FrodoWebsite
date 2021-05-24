@@ -26,8 +26,8 @@ export default function Home() {
             </Section>
             <Section>
                 <div className="ppContainer" style={{position: 'relative', textAlign: 'center'}}>
-                    <img alt="Toffee1347" src="/static/img/Toffee1347.jpg" style={{width: '20vmin', height: '20vmin', top: '10px', left: '10px', position: 'absolute'}} className="pp"/>
-                    <img alt="ZigZagZat" src="/static/img/ZigZagZat.jpg" style={{width: '20vmin', height: '20vmin', bottom: '10px', right: '10px', position: 'absolute'}} className="pp"/>
+                    <img alt="Toffee1347" src="/static/img/Toffee1347.jpg" className="pp" style={{top: '10px', left: '10px'}}/>
+                    <img alt="ZigZagZat" src="/static/img/ZigZagZat.jpg" className="pp" style={{bottom: '10px', right: '10px'}}/>
                 </div>
                 <div>
                     <b style={{fontSize: 'x-large'}}>Who made Frodo?</b>
