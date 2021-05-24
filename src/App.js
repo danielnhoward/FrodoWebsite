@@ -3,13 +3,11 @@ import Home from './pages/Home.js';
 // eslint-disable-next-line
 import NavBar from './components/NavBar.js';
 import './style.scss';
-import BMC from './components/BMC.js';
 
 function App() {
   return (
         <Router>
             {/* <NavBar></NavBar> */}
-            <BMC></BMC>
             
             <Switch>
                 <Route path="/" exact>

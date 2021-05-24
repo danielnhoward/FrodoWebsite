@@ -20,18 +20,18 @@ export default function Section(props) {
     return (
         <section>
             <Grid style={{width: '100%'}} container spacing={5}>
-                <Grid item xs={0} sm={0} lg={2}></Grid>
-                <Grid className={classes.part} item sm={12} xs={12} lg={4}>
+                <Grid item xs={false} sm={false} md={2}></Grid>
+                <Grid className={classes.part} item sm={12} xs={12} md={4}>
                     <part>
                         {props.children[0]}
                     </part>
                 </Grid>
-                <Grid className={classes.part} item sm={12} xs={12} lg={4}>
+                <Grid className={classes.part} item sm={12} xs={12} md={4}>
                     <part>
                         {props.children[1]}
                     </part>
                 </Grid>
-                <Grid item xs={0} sm={0} lg={2}></Grid>
+                <Grid item xs={false} sm={false} md={2}></Grid>
             </Grid>
         </section>
     );
