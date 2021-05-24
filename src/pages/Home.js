@@ -41,7 +41,12 @@ export default function Home() {
                 <div>
                     <b style={{fontSize: 'x-large'}}>Who made Frodo?</b>
                     <p>
-                        Frodo was developed by two junior developers from the UK.
+                        Frodo was developed by Daniel Howard (<a href="https://github.com/Toffee1347" target="_blank">GitHub</a>) and Noah Lavelle (<a href="https://github.com/NoahLavelle" target="_blank">GitHub</a>). We starting making Frodo as a small project and then decided to try and make a bot that people actually use!
+                    </p>
+                    <br/><br/>
+                    <b style={{fontSize: 'x-large'}}>How is Frodo made?</b>
+                    <p>
+                        Frodo is made with discord-js and is all made through typeScript (code is open source and <a href="https://github.com/NoahLavelle/Frodo">here</a>). This website is made with React-js with the Material-ui component libary (code is open source and <a href="https://github.com/NoahLavelle/FrodoWebsite">here</a>).
                     </p>
                 </div>
             </Section>
