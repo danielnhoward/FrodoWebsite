@@ -8,6 +8,7 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import AnnouncementIcon from '@material-ui/icons/Announcement';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import { useState } from 'react';
+import HideOnSroll from './HideOnScroll';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,63 +61,67 @@ export default function NavBar(props) {
     
     if (!useMediaQuery('(max-width: 959px)')) {
         return (
-            <AppBar color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
-                <Toolbar>
-                    <Typography variant="h6" className={classes.title}>
-                        <Button style={{fontSize: 'x-large'}}><b>Frodo</b></Button>
-                    </Typography>
-                    <Typography variant="h6" className={classes.option}>
-                        <Button onClick={commandsPress}>Commands <ArrowDropDownIcon/></Button>
-                        <Menu keepMounted anchorEl={anchorEl} open={menuOpen} onClose={menuClose} style={{width: '100%'}}>
-                            <MenuList>
-                                <Typography className={classes.menulist}>Game Commands</Typography>
-                                <MenuItem>Akinator</MenuItem>
-                                <MenuItem>Anagrams</MenuItem>
-                                <MenuItem>Connect Four</MenuItem>
-                                <MenuItem>Hangman</MenuItem>
-                                <MenuItem>Rock Paper Scissors</MenuItem>
-                                <MenuItem>Trivia</MenuItem>
-                                <MenuItem>Tic Tac Toe</MenuItem>
-                                <MenuItem>Warewolves</MenuItem>
-                            </MenuList>
-                            <MenuList>
-                                <Typography className={classes.menulist}>Text Commands</Typography>
-                                <MenuItem>Fact</MenuItem>
-                                <MenuItem>Fortune</MenuItem>
-                                <MenuItem>Insult</MenuItem>
-                                <MenuItem>Joke</MenuItem>
-                            </MenuList>
-                        </Menu>
-                    </Typography>
-                    <Typography variant="h6" className={classes.option}>
-                        <Button>Announcements</Button>
-                    </Typography>
-                    <Typography variant="h6" className={classes.option}>
-                        <Button>Feedback/Report Problem</Button>
-                    </Typography>
-                    <Button href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
-                        Invite Me!
-                    </Button>
-                </Toolbar>
-            </AppBar>
-        );
-    }
-    else {
-        return (
-            <>
+            <HideOnSroll>
                 <AppBar color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
                     <Toolbar>
-                        <IconButton onClick={commandsPress} edge="start" color="inherit" aria-label="menu">
-                            <MenuIcon/>
-                        </IconButton>
                         <Typography variant="h6" className={classes.title}>
                             <Button style={{fontSize: 'x-large'}}><b>Frodo</b></Button>
                         </Typography>
-                        <Button  href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
+                        <Typography variant="h6" className={classes.option}>
+                            <Button onClick={commandsPress}>Commands <ArrowDropDownIcon/></Button>
+                            <Menu keepMounted anchorEl={anchorEl} open={menuOpen} onClose={menuClose} style={{width: '100%'}}>
+                                <MenuList>
+                                    <Typography className={classes.menulist}>Game Commands</Typography>
+                                    <MenuItem>Akinator</MenuItem>
+                                    <MenuItem>Anagrams</MenuItem>
+                                    <MenuItem>Connect Four</MenuItem>
+                                    <MenuItem>Hangman</MenuItem>
+                                    <MenuItem>Rock Paper Scissors</MenuItem>
+                                    <MenuItem>Trivia</MenuItem>
+                                    <MenuItem>Tic Tac Toe</MenuItem>
+                                    <MenuItem>Warewolves</MenuItem>
+                                </MenuList>
+                                <MenuList>
+                                    <Typography className={classes.menulist}>Text Commands</Typography>
+                                    <MenuItem>Fact</MenuItem>
+                                    <MenuItem>Fortune</MenuItem>
+                                    <MenuItem>Insult</MenuItem>
+                                    <MenuItem>Joke</MenuItem>
+                                </MenuList>
+                            </Menu>
+                        </Typography>
+                        <Typography variant="h6" className={classes.option}>
+                            <Button>Announcements</Button>
+                        </Typography>
+                        <Typography variant="h6" className={classes.option}>
+                            <Button>Feedback/Report Problem</Button>
+                        </Typography>
+                        <Button href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
                             Invite Me!
                         </Button>
                     </Toolbar>
                 </AppBar>
+            </HideOnSroll>
+        );
+    }
+    else {
+        return (
+            <div>
+                <HideOnSroll>
+                    <AppBar color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
+                        <Toolbar>
+                            <IconButton onClick={commandsPress} edge="start" color="inherit" aria-label="menu">
+                                <MenuIcon/>
+                            </IconButton>
+                            <Typography variant="h6" className={classes.title}>
+                                <Button style={{fontSize: 'x-large'}}><b>Frodo</b></Button>
+                            </Typography>
+                            <Button  href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
+                                Invite Me!
+                            </Button>
+                        </Toolbar>
+                    </AppBar>
+                </HideOnSroll>
                 <Drawer anchor="left" open={menuOpen} onClose={menuClose}>
                     <div style={{width: '80vw'}}>
                         <ListItem button>
@@ -165,7 +170,7 @@ export default function NavBar(props) {
                         </ListItem>
                     </div>
                 </Drawer>
-            </>
+            </div>
         );
     };
 };
