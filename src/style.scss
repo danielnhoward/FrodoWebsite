@@ -1,3 +1,7 @@
+:root {
+    --h: 100vh;
+}
+
 body {
     overflow: overlay;
 }
@@ -85,7 +89,7 @@ h1 {
 }
 
 section {
-    height: 100vh;
+    height: var(--h);
     overflow: hidden;
     width: 100vw;
     background-attachment: fixed;

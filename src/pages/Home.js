@@ -36,17 +36,17 @@ export default function Home() {
             <Section>
                 <div className="ppContainer" style={{position: 'relative', textAlign: 'center'}}>
                     <img alt="Toffee1347" src="/static/img/Toffee1347.jpg" className="pp" style={{top: '10px', left: '10px'}}/>
-                    <img alt="ZigZagZat" src="/static/img/ZigZagZat.jpg" className="pp" style={{bottom: '10px', right: '10px'}}/>
+                    <img alt="ZigZagZat" src="/static/img/ZigZagZat.svg" className="pp" style={{bottom: '10px', right: '10px'}}/>
                 </div>
                 <div>
                     <b style={{fontSize: 'x-large'}}>Who made Frodo?</b>
                     <p>
-                        Frodo was developed by Daniel Howard (<a href="https://github.com/Toffee1347" target="_blank">GitHub</a>) and Noah Lavelle (<a href="https://github.com/NoahLavelle" target="_blank">GitHub</a>). We starting making Frodo as a small project and then decided to try and make a bot that people actually use!
+                        Frodo was developed by Daniel Howard (<a rel="noreferrer" href="https://github.com/Toffee1347" target="_blank">GitHub</a>) and Noah Lavelle (<a rel="noreferrer" href="https://github.com/NoahLavelle" target="_blank">GitHub</a>). We starting making Frodo as a small project and then decided to try and make a bot that people actually use!
                     </p>
                     <br/><br/>
                     <b style={{fontSize: 'x-large'}}>How is Frodo made?</b>
                     <p>
-                        Frodo is made with discord-js and is all made through typeScript (code is open source and <a href="https://github.com/NoahLavelle/Frodo">here</a>). This website is made with React-js with the Material-ui component libary (code is open source and <a href="https://github.com/NoahLavelle/FrodoWebsite">here</a>).
+                        Frodo is made with discord-js and is all made through typeScript (code is open source and <a rel="noreferrer" href="https://github.com/NoahLavelle/Frodo" target="_blank">here</a>). This website is made with React-js with the Material-ui component libary (code is open source and <a rel="noreferrer" href="https://github.com/NoahLavelle/FrodoWebsite" target="_blank">here</a>).
                     </p>
                 </div>
             </Section>

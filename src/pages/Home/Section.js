@@ -6,6 +6,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+document.documentElement.style.setProperty('--h', `${window.innerHeight}px`);
+window.addEventListener('resize', () => {
+    document.documentElement.style.setProperty('--h', `${window.innerHeight}px`);
+});
+
 export default function Section(props) {
     const classes = useStyles();
 
@@ -16,6 +21,21 @@ export default function Section(props) {
             </section>
         );
     };
+    if (props.one) {
+        return (
+            <section>
+                <Grid style={{width: '100%'}} container spacing={5}>
+                    <Grid item xs={false} sm={false} md={3}></Grid>
+                    <Grid className={classes.part} item sm={12} xs={12} md={6}>
+                        <div className="center">
+                            {props.children}
+                        </div>
+                    </Grid>
+                    <Grid item xs={false} sm={false} md={3}></Grid>
+                </Grid>
+            </section>
+        )
+    }
     let section = [];
     return (
         <section>
