@@ -4,6 +4,7 @@ import NavBar from './components/NavBar.js';
 import './style.scss';
 import Announcements from './pages/Announcements.js';
 import Feedback from './pages/Feedback.js';
+import Error from './pages/error.js';
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
                 </Route>
                 <Route path="/feedback/" exact>
                     <Feedback/>
+                </Route>
+
+                <Route path="*">
+                    <Error/>
                 </Route>
             </Switch>
         </Router>

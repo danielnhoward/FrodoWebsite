@@ -56,6 +56,26 @@ export default function Section(props) {
             </section>
         );
     };
+    if (props.error) {
+        return (
+            <section style={{overflow: 'visible',  minHeight: 'calc(var(--h) + 20px)', height: 'auto'}}>
+                <Grid style={{width: '100%'}} container spacing={5}>
+                    <Grid style={{paddingBottom: 0}} item xs={false} sm={false} md={2}></Grid>
+                    <Grid style={{paddingBottom: 0}} className={classes.part} item sm={12} xs={12} md={4}>
+                        <part>
+                            {props.children[0]}
+                        </part>
+                    </Grid>
+                    <Grid style={{paddingBottom: 0}} className={classes.part} item sm={12} xs={12} md={4}>
+                        <part>
+                            {props.children[1]}
+                        </part>
+                    </Grid>
+                    <Grid style={{paddingBottom: 0}} item xs={false} sm={false} md={2}></Grid>
+                </Grid>
+            </section>
+        );
+    };
     let section = [];
     return (
         <section>
