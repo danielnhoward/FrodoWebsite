@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function NavBar(props) {
+export default function NavBar() {
     const classes = useStyles();
     const [menuOpen, setMenuOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState();
@@ -61,6 +61,10 @@ export default function NavBar(props) {
     function inviteClick(ev) {
         ev.preventDefault();
         window.open('https://top.gg/bot/734746193082581084/invite/', '', 'width=500, height=700');
+    };
+
+    function drawerItemClick() {
+        setMenuOpen(false);
     };
     
     if (!useMediaQuery('(max-width: 959px)')) {
@@ -129,7 +133,7 @@ export default function NavBar(props) {
                 <Drawer anchor="left" open={menuOpen} onClose={menuClose}>
                     <div style={{width: '80vw'}}>
                         <List>
-                            <ListItem button component={Link} to="/">
+                            <ListItem onClick={drawerItemClick} button component={Link} to="/">
                                 <ListItemIcon>
                                     <HomeIcon/>
                                 </ListItemIcon>
@@ -147,27 +151,27 @@ export default function NavBar(props) {
                                     <Divider/>
                                     <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
                                     {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game) => (
-                                        <ListItem button className={classes.subItem}>
+                                        <ListItem onClick={drawerItemClick} button className={classes.subItem}>
                                             <ListItemText primary={game}/>
                                         </ListItem>
                                     ))}
                                     <Divider/>
                                     <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
                                     {['Fact', 'Fortune', 'Insult', 'Joke'].map((game) => (
-                                        <ListItem button className={classes.subItem}>
+                                        <ListItem onClick={drawerItemClick} button className={classes.subItem}>
                                             <ListItemText primary={game}/>
                                         </ListItem>
                                     ))}
                                     <Divider/>
                                 </List>
                             </Collapse>
-                            <ListItem button  component={Link} to="/announcements">
+                            <ListItem onClick={drawerItemClick} button  component={Link} to="/announcements">
                                 <ListItemIcon>
                                     <AnnouncementIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Announcements"/>
                             </ListItem>
-                            <ListItem button component={Link} to="/feedback">
+                            <ListItem onClick={drawerItemClick} button component={Link} to="/feedback">
                                 <ListItemIcon>
                                     <ReportProblemIcon/>
                                 </ListItemIcon>
