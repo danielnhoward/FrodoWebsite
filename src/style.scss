@@ -118,7 +118,7 @@ section:nth-of-type(3) {
 @media only screen and (max-width: 959px) {
     section {
         overflow: visible;
-        min-height: 100vh;
+        min-height: var(--h);
         height: unset;
     }
     section part {

@@ -9,10 +9,14 @@ import AnnouncementIcon from '@material-ui/icons/Announcement';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import { useState } from 'react';
 import HideOnSroll from './HideOnScroll';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      '& a': {
+        textDecoration: 'none'
+      }
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -62,9 +66,9 @@ export default function NavBar(props) {
     if (!useMediaQuery('(max-width: 959px)')) {
         return (
             <HideOnSroll>
-                <AppBar color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
+                <AppBar className={classes.root} color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
                     <Toolbar>
-                        <Typography variant="h6" className={classes.title}>
+                        <Typography variant="h6" className={classes.title} component={Link} to="/">
                             <Button style={{fontSize: 'x-large'}}><b>Frodo</b></Button>
                         </Typography>
                         <Typography variant="h6" className={classes.option}>
@@ -90,10 +94,10 @@ export default function NavBar(props) {
                                 </MenuList>
                             </Menu>
                         </Typography>
-                        <Typography variant="h6" className={classes.option}>
+                        <Typography variant="h6" className={classes.option} component={Link} to="/announcements">
                             <Button>Announcements</Button>
                         </Typography>
-                        <Typography variant="h6" className={classes.option}>
+                        <Typography variant="h6" className={classes.option} component={Link} to="/feedback">
                             <Button>Feedback/Report Problem</Button>
                         </Typography>
                         <Button href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
@@ -108,12 +112,12 @@ export default function NavBar(props) {
         return (
             <div>
                 <HideOnSroll>
-                    <AppBar color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
+                    <AppBar className={classes.root} color="transparent" position="fixed" style={{ background: 'transparent', boxShadow: 'none', color: 'black'}}>
                         <Toolbar>
                             <IconButton onClick={commandsPress} edge="start" color="inherit" aria-label="menu">
                                 <MenuIcon/>
                             </IconButton>
-                            <Typography variant="h6" className={classes.title}>
+                            <Typography variant="h6" className={classes.title} component={Link} to="/">
                                 <Button style={{fontSize: 'x-large'}}><b>Frodo</b></Button>
                             </Typography>
                             <Button  href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
@@ -124,50 +128,52 @@ export default function NavBar(props) {
                 </HideOnSroll>
                 <Drawer anchor="left" open={menuOpen} onClose={menuClose}>
                     <div style={{width: '80vw'}}>
-                        <ListItem button>
-                            <ListItemIcon>
-                                <HomeIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Home"/>
-                        </ListItem>
-                        <ListItem button onClick={commandsClick}>
-                            <ListItemIcon>
-                                <MemoryIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Commands"/>
-                            {commandsCollapse ? <ExpandLess/> : <ExpandMore/>}
-                        </ListItem>
-                        <Collapse in={commandsCollapse} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
-                                <Divider/>
-                                <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
-                                {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game) => (
-                                    <ListItem button className={classes.subItem}>
-                                        <ListItemText primary={game}/>
-                                    </ListItem>
-                                ))}
-                                <Divider/>
-                                <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
-                                {['Fact', 'Fortune', 'Insult', 'Joke'].map((game) => (
-                                    <ListItem button className={classes.subItem}>
-                                        <ListItemText primary={game}/>
-                                    </ListItem>
-                                ))}
-                                <Divider/>
-                            </List>
-                        </Collapse>
-                        <ListItem button>
-                            <ListItemIcon>
-                                <AnnouncementIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Announcements"/>
-                        </ListItem>
-                        <ListItem button>
-                            <ListItemIcon>
-                                <ReportProblemIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary="Feedback/Report Problem"/>
-                        </ListItem>
+                        <List>
+                            <ListItem button component={Link} to="/">
+                                <ListItemIcon>
+                                    <HomeIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Home"/>
+                            </ListItem>
+                            <ListItem button onClick={commandsClick}>
+                                <ListItemIcon>
+                                    <MemoryIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Commands"/>
+                                {commandsCollapse ? <ExpandLess/> : <ExpandMore/>}
+                            </ListItem>
+                            <Collapse in={commandsCollapse} timeout="auto" unmountOnExit>
+                                <List component="div" disablePadding>
+                                    <Divider/>
+                                    <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
+                                    {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game) => (
+                                        <ListItem button className={classes.subItem}>
+                                            <ListItemText primary={game}/>
+                                        </ListItem>
+                                    ))}
+                                    <Divider/>
+                                    <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
+                                    {['Fact', 'Fortune', 'Insult', 'Joke'].map((game) => (
+                                        <ListItem button className={classes.subItem}>
+                                            <ListItemText primary={game}/>
+                                        </ListItem>
+                                    ))}
+                                    <Divider/>
+                                </List>
+                            </Collapse>
+                            <ListItem button  component={Link} to="/announcements">
+                                <ListItemIcon>
+                                    <AnnouncementIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Announcements"/>
+                            </ListItem>
+                            <ListItem button component={Link} to="/feedback">
+                                <ListItemIcon>
+                                    <ReportProblemIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary="Feedback/Report Problem"/>
+                            </ListItem>
+                        </List>
                     </div>
                 </Drawer>
             </div>
