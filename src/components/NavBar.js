@@ -60,7 +60,7 @@ export default function NavBar() {
 
     function inviteClick(ev) {
         ev.preventDefault();
-        window.open('https://top.gg/bot/734746193082581084/invite/', '', 'width=500, height=700');
+        window.open('http://invite.frodo.fun/', '', 'width=500, height=700');
     };
 
     function drawerItemClick() {
@@ -104,7 +104,7 @@ export default function NavBar() {
                         <Typography variant="h6" className={classes.option} component={Link} to="/feedback">
                             <Button>Feedback/Report Problem</Button>
                         </Typography>
-                        <Button href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
+                        <Button href="http://invite.frodo.fun" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
                             Invite Me!
                         </Button>
                     </Toolbar>
@@ -124,7 +124,7 @@ export default function NavBar() {
                             <Typography variant="h6" className={classes.title} component={Link} to="/">
                                 <Button style={{fontSize: 'x-large'}}><b>Frodo</b></Button>
                             </Typography>
-                            <Button  href="https://top.gg/bot/734746193082581084/invite/" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
+                            <Button  href="http://invite.frodo.fun" onClick={inviteClick} className={classes.inviteBtn} variant="outlined" color="primary">
                                 Invite Me!
                             </Button>
                         </Toolbar>
