@@ -30,7 +30,7 @@ export default function Home() {
                     </Card> */}
                 </div>
                 <div>
-                    <img alt="Frodo preview" width="400" src="/static/img/frodoProfile.svg" className="frodoPreview"/>
+                    <img alt="Frodo preview" width="300" src="/static/img/frodoProfile-new.svg" className="frodoPreview"/>
                 </div>
             </Section>
             <Section>

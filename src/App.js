@@ -18,6 +18,9 @@ function App() {
                 <Route path="/announcements/" exact>
                     <Announcements/>
                 </Route>
+                <Route path="/announcements/*" exact>
+                    {window.location.pathname.split('/')[2]}
+                </Route>
                 <Route path="/feedback/" exact>
                     <Feedback/>
                 </Route>

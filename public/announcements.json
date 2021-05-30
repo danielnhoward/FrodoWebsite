@@ -1,58 +1,9 @@
-[
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
-    },
-    {
-        "timestamp": 1621960979477,
-        "title": "Update"
+{
+    "verification": {
+        "timestamp": 1622364807708,
+        "author": "/static/img/Toffee1347.jpg",
+        "content": {
+            "title": "Update"
+        }
     }
-]
+}
