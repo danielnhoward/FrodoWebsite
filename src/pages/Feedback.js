@@ -38,7 +38,7 @@ export default function Feedback() {
             setMessage((
                 <>
                     <br/><br/>
-                    Want us to imediately start work on your feature? Buy us a coffee by clicking <button  style={{cursor: 'pointer', color: 'blue', background: 'none', border: 'none', padding: 0}} onClick={hereClick}>here</button> and leave a message with your wanted feature in!
+                    Want us to imediately start work on your feature? Buy us a coffee by clicking <button type="button" style={{cursor: 'pointer', color: 'blue', background: 'none', border: 'none', padding: 0}} onClick={hereClick}>here</button> and leave a message with your wanted feature in!
                 </>
             ));
         }
@@ -67,24 +67,31 @@ export default function Feedback() {
         document.getElementById('feedbackForm').style.opacity = 0.5;
         document.getElementById('formImg').style.opacity = 1;
         document.getElementById('feedbackForm').style.pointerEvents = 'none';
-
-        await fetch('https://send.pageclip.co/eNnG27q3FHjq40L6kyHHCE1Lbrocm0KH', {
-            method: 'POST',
-            cache: 'no-cache',
-            mode: 'no-cors', 
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: `Name=${document.getElementById('formName').value}&Email=${document.getElementById('formEmail').value}&Field=${field}&Desc=${document.getElementById('formDesc').value}`
-        });
         
-        document.getElementById('formImg').style.opacity = 0;
-
         function close() {
             document.getElementById('feedbackForm').style.pointerEvents = 'all';
             document.getElementById('feedbackForm').style.opacity = 1;
             setAlertText('');
         };
+
+        try {
+            await fetch('https://send.pageclip.co/eNnG27q3FHjq40L6kyHHCE1Lbrocm0KH', {
+                method: 'POST',
+                cache: 'no-cache',
+                mode: 'no-cors', 
+                headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: `Name=${document.getElementById('formName').value}&Email=${document.getElementById('formEmail').value}&Field=${field}&Desc=${document.getElementById('formDesc').value}`
+            });
+        }
+        catch(er) {
+            document.getElementById('formImg').style.opacity = 0;
+            return setAlertText(<Alert severity="error" action={<IconButton aria-label="close" color="inherit" size="small" onClick={close}><CloseIcon fontSize="inherit"/></IconButton>}>Looks like we can't reach our feedback server right now, please try again later</Alert>);
+        };
+        
+        document.getElementById('formImg').style.opacity = 0;
+
 
         setAlertText(<Alert severity="success" action={<IconButton aria-label="close" color="inherit" size="small" onClick={close}><CloseIcon fontSize="inherit"/></IconButton>}>Thanks for your feedback {document.getElementById('formName').value}!</Alert>);
 

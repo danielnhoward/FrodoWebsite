@@ -80,21 +80,20 @@ export default function NavBar() {
                             <Menu keepMounted anchorEl={anchorEl} open={menuOpen} onClose={menuClose} style={{width: '100%'}}>
                                 <MenuList>
                                     <Typography className={classes.menulist}>Game Commands</Typography>
-                                    <MenuItem>Akinator</MenuItem>
-                                    <MenuItem>Anagrams</MenuItem>
-                                    <MenuItem>Connect Four</MenuItem>
-                                    <MenuItem>Hangman</MenuItem>
-                                    <MenuItem>Rock Paper Scissors</MenuItem>
-                                    <MenuItem>Trivia</MenuItem>
-                                    <MenuItem>Tic Tac Toe</MenuItem>
-                                    <MenuItem>Warewolves</MenuItem>
+                                    {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game) => (
+                                        <MenuItem onClick={drawerItemClick} component={Link} to={`/commands#${game.toLowerCase()}`}>
+                                            {game}
+                                        </MenuItem>
+                                    ))}
                                 </MenuList>
+                                <Divider/>
                                 <MenuList>
                                     <Typography className={classes.menulist}>Text Commands</Typography>
-                                    <MenuItem>Fact</MenuItem>
-                                    <MenuItem>Fortune</MenuItem>
-                                    <MenuItem>Insult</MenuItem>
-                                    <MenuItem>Joke</MenuItem>
+                                    {['Fact', 'Fortune', 'Insult', 'Joke'].map((game) => (
+                                        <MenuItem onClick={drawerItemClick} component={Link} to={`/commands#${game.toLowerCase()}`}>
+                                            {game}
+                                        </MenuItem>
+                                    ))}
                                 </MenuList>
                             </Menu>
                         </Typography>
@@ -133,45 +132,45 @@ export default function NavBar() {
                 <Drawer anchor="left" open={menuOpen} onClose={menuClose}>
                     <div style={{width: '80vw'}}>
                         <List>
-                            <ListItem onClick={drawerItemClick} button component={Link} to="/">
+                            <ListItem key={0} onClick={drawerItemClick} button component={Link} to="/">
                                 <ListItemIcon>
                                     <HomeIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Home"/>
                             </ListItem>
-                            <ListItem button onClick={commandsClick}>
+                            <ListItem key={1} button onClick={commandsClick}>
                                 <ListItemIcon>
                                     <MemoryIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Commands"/>
                                 {commandsCollapse ? <ExpandLess/> : <ExpandMore/>}
                             </ListItem>
-                            <Collapse in={commandsCollapse} timeout="auto" unmountOnExit>
+                            <Collapse key={2} in={commandsCollapse} timeout="auto" unmountOnExit>
                                 <List component="div" disablePadding>
                                     <Divider/>
                                     <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
-                                    {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game) => (
-                                        <ListItem onClick={drawerItemClick} button className={classes.subItem}>
+                                    {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game, index) => (
+                                        <ListItem key={index} onClick={drawerItemClick} button component={Link} to={`/commands#${game.toLowerCase()}`} className={classes.subItem}>
                                             <ListItemText primary={game}/>
                                         </ListItem>
                                     ))}
                                     <Divider/>
                                     <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
-                                    {['Fact', 'Fortune', 'Insult', 'Joke'].map((game) => (
-                                        <ListItem onClick={drawerItemClick} button className={classes.subItem}>
+                                    {['Fact', 'Fortune', 'Insult', 'Joke'].map((game, index) => (
+                                        <ListItem key={index + 8} onClick={drawerItemClick} button component={Link} to={`/commands#${game.toLowerCase()}`} className={classes.subItem}>
                                             <ListItemText primary={game}/>
                                         </ListItem>
                                     ))}
                                     <Divider/>
                                 </List>
                             </Collapse>
-                            <ListItem onClick={drawerItemClick} button  component={Link} to="/announcements">
+                            <ListItem key={3} onClick={drawerItemClick} button  component={Link} to="/announcements">
                                 <ListItemIcon>
                                     <AnnouncementIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Announcements"/>
                             </ListItem>
-                            <ListItem onClick={drawerItemClick} button component={Link} to="/feedback">
+                            <ListItem key={4} onClick={drawerItemClick} button component={Link} to="/feedback">
                                 <ListItemIcon>
                                     <ReportProblemIcon/>
                                 </ListItemIcon>

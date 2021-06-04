@@ -21,6 +21,13 @@ export default function Section(props) {
             </section>
         );
     };
+    if (props.nonResponsiveCommands) {
+        return (
+            <section style={{minHeight: 'var(--h)', height: 'unset', overflow: 'visible'}}>
+                {props.children}
+            </section>
+        );
+    };
     if (props.one) {
         return (
             <section>

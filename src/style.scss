@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --h: 100vh;
 }
@@ -91,7 +95,7 @@ h1 {
 section {
     height: var(--h);
     overflow: hidden;
-    width: 100vw;
+    // width: 100vw;
     background-attachment: fixed;
 }
 section part {
@@ -114,7 +118,6 @@ section:nth-of-type(3) {
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
-
 @media only screen and (max-width: 959px) {
     section {
         overflow: visible;
@@ -135,6 +138,52 @@ section:nth-of-type(3) {
     }
 }
 
+.command {
+    overflow-y: hidden;
+    background-attachment: fixed;
+    padding: 30px;
+}
+.commandone {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.commandtwo {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.commandthree {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+}
+.commandfour {
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+.commandfive {
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+.commandsix {
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+}
+.commandseven {
+    background-image: linear-gradient(to top, #96fbc4 0%, #f9f586 100%);
+}
+.commandeight {
+    background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
+}
+.commandnine {
+    background-image: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+}
+.commandten {
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+.commandeleven {
+    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+.commandtwelve {
+    background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
+}
+
+.commandPicture {
+    width: 100%;
+}
+
 .frodoStats {
     text-align: center;
 }
@@ -146,4 +195,45 @@ nav a {
 
 a {
     text-decoration: none;
+}
+
+@keyframes arrowAnim {
+    0% {
+        bottom: 20px;
+    }
+    50% {
+        bottom: 30px;
+    }
+    100% {
+        bottom: 20px;
+    }
+}
+.arrowAnimated {
+    animation: arrowAnim 1.3s linear infinite;
+}
+
+.contents {
+    width: 100%;
+    max-width: 360px;
+    background: rgba(50, 50, 50, 0.2);
+    border: black 1px solid;
+    border-radius: 10px;
+}
+.commandSyntax {
+    background: rgba(211, 211, 211, 0.5);
+    padding: 10px;
+    border: black 1px solid;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.commandPopup {
+    padding: 20px;
+}
+.commandsCode {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: small;
+    margin-top: 5px;
 }
