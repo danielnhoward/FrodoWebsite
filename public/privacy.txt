@@ -1,0 +1,8 @@
+What data do we collect?
+    Frodo doesn't collect any personal data and only stores two pieces of information per server. Firstly, Frodo stores the prefix that the server has chosen (defaulted to .) and the jokeFilters so some jokes can be filtered out of the joke command. Both of these pieces of information are kept secure and can easily be changed. When the bot is kicked from a server, the data is wiped.
+Who has acsess to the data?
+    Only the two creators can acsess the data as it is kept secure.
+How can users contact us?
+    Users can contact us through the feedback feature (https://frodo.fun/feedback) on this site.
+How can the data be removed?
+    As soon as the bot is kicked from a server, all the data is wiped from the database.
