@@ -29,7 +29,7 @@ export default class Commands extends React.Component {
 
     componentDidMount() {
         const hash = window.location.hash;
-        document.getElementById(hash.replace('#', ''))?.scrollIntoView();
+        setTimeout(() => document.getElementById(hash.replace('#', ''))?.scrollIntoView(), 1000);
     };
     click() {
         this.setState({
@@ -74,16 +74,31 @@ export default class Commands extends React.Component {
                     </div>
                 </Section>
                 <Command id="akinator" command="one">
-                    <div>
+                    <div style={{textAlign: 'center'}}>
                         <Typography variant="h6"><b>Akinator</b></Typography>
+                        <p>Uses the powerfull <a href="https://en.akinator.com" target="_blank" rel="noreferrer">Akinator AI</a> to guess anyone you are thinking of, all from within the discord chat!</p>
+                        <Typography variant="h7"><b>What is Akinator?</b></Typography>
+                        <p>Akinator is a game where you get asked a set of questions and the AI will try and guess what character you are thinking of!</p>
+                        
+                        <CommandSyntax
+                            command={{
+                                name: 'akinator',
+                                description: (
+                                    <>
+                                    Akinator takes no arguments, just run the command and the game will start
+                                    </>
+                                )
+                            }}
+                            args={[]}
+                        />
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" style={{width: '60%'}} src="/static/img/commands/akinator.png"/>
                     </div>
                 </Command>
                 <Command id="anagrams" command="two">
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/anagrams.png"/>
                     </div>
                     <div>
                         <Typography variant="h6"><b>Anagrams</b></Typography>
@@ -127,11 +142,9 @@ export default class Commands extends React.Component {
                                         {this.state.categories.map((category, index) => {
                                             if (index % 2 === 0) {
                                                 return (
-                                                    <>
-                                                        <ListItem style={{textAlign: 'center'}} button>
-                                                            <ListItemText primary={category.name}/>
-                                                        </ListItem>
-                                                    </>
+                                                    <ListItem key={index} style={{textAlign: 'center'}} button>
+                                                        <ListItemText primary={category.name}/>
+                                                    </ListItem>
                                                 );
                                             };
                                             return '';
@@ -141,12 +154,10 @@ export default class Commands extends React.Component {
                                         {this.state.categories.map((category, index) => {
                                             if (index % 2 === 1) {
                                                 return (
-                                                    <>
-                                                        <ListItem style={{textAlign: 'center'}} button>
-                                                            <ListItemText primary={category.name}/>
-                                                        </ListItem>
-                                                    </>
-                                                );
+                                                    <ListItem key={index} style={{textAlign: 'center'}} button>
+                                                        <ListItemText primary={category.name}/>
+                                                    </ListItem>
+                                            );
                                             };
                                             return '';
                                         })}
@@ -205,10 +216,10 @@ export default class Commands extends React.Component {
                                             <div className="commandsCode">
                                                 {this.state.categoriesFetched ? (
                                                     this.state.categories.map((category, index) => (
-                                                        <>
+                                                        <span key={index}>
                                                             {index !== 0 ? <br/> : ''}
                                                             <code>{category.name}</code>
-                                                        </>
+                                                        </span>
                                                     ))
                                                 ) : (
                                                     <img style={{marginLeft: '50%', transform: 'translateX(-50%)'}} alt="" src="/static/img/loading.svg"/>

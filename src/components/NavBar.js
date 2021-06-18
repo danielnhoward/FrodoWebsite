@@ -81,7 +81,7 @@ export default function NavBar() {
                                 <MenuList>
                                     <Typography className={classes.menulist}>Game Commands</Typography>
                                     {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game) => (
-                                        <MenuItem onClick={drawerItemClick} component={Link} to={`/commands#${game.toLowerCase()}`}>
+                                        <MenuItem key={game} onClick={drawerItemClick} component={Link} to={`/commands#${game.toLowerCase()}`}>
                                             {game}
                                         </MenuItem>
                                     ))}
@@ -90,7 +90,7 @@ export default function NavBar() {
                                 <MenuList>
                                     <Typography className={classes.menulist}>Text Commands</Typography>
                                     {['Fact', 'Fortune', 'Insult', 'Joke'].map((game) => (
-                                        <MenuItem onClick={drawerItemClick} component={Link} to={`/commands#${game.toLowerCase()}`}>
+                                        <MenuItem key={game} onClick={drawerItemClick} component={Link} to={`/commands#${game.toLowerCase()}`}>
                                             {game}
                                         </MenuItem>
                                     ))}

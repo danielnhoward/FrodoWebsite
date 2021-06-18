@@ -34,9 +34,9 @@ export default function Section(props) {
                 <Grid style={{width: '100%'}} container spacing={5}>
                     <Grid item xs={false} sm={false} md={3}></Grid>
                     <Grid className={classes.part} item sm={12} xs={12} md={6}>
-                        <part>
+                        <div className="part">
                             {props.children}
-                        </part>
+                        </div>
                     </Grid>
                     <Grid item xs={false} sm={false} md={3}></Grid>
                 </Grid>
@@ -49,14 +49,14 @@ export default function Section(props) {
                 <Grid style={{width: '100%'}} container spacing={5}>
                     <Grid style={{paddingBottom: 0}} item xs={false} sm={false} md={2}></Grid>
                     <Grid style={{paddingBottom: 0}} className={classes.part} item sm={12} xs={12} md={4}>
-                        <part>
+                        <div className="part">
                             {props.children[0]}
-                        </part>
+                        </div>
                     </Grid>
                     <Grid style={{paddingBottom: 0}} className={classes.part} item sm={12} xs={12} md={4}>
-                        <part>
+                        <div className="part">
                             {props.children[1]}
-                        </part>
+                        </div>
                     </Grid>
                     <Grid style={{paddingBottom: 0}} item xs={false} sm={false} md={2}></Grid>
                 </Grid>
@@ -69,14 +69,14 @@ export default function Section(props) {
                 <Grid style={{width: '100%'}} container spacing={5}>
                     <Grid style={{paddingBottom: 0}} item xs={false} sm={false} md={2}></Grid>
                     <Grid style={{paddingBottom: 0}} className={classes.part} item sm={12} xs={12} md={4}>
-                        <part>
+                        <div className="part">
                             {props.children[0]}
-                        </part>
+                        </div>
                     </Grid>
                     <Grid style={{paddingBottom: 0}} className={classes.part} item sm={12} xs={12} md={4}>
-                        <part>
+                        <div className="part">
                             {props.children[1]}
-                        </part>
+                        </div>
                     </Grid>
                     <Grid style={{paddingBottom: 0}} item xs={false} sm={false} md={2}></Grid>
                 </Grid>
@@ -89,14 +89,14 @@ export default function Section(props) {
             <Grid style={{width: '100%'}} container spacing={5}>
                 <Grid item xs={false} sm={false} md={2}></Grid>
                 <Grid className={classes.part} item sm={12} xs={12} md={4}>
-                    <part>
+                    <div className="part">
                         {props.children[0]}
-                    </part>
+                    </div>
                 </Grid>
                 <Grid className={classes.part} item sm={12} xs={12} md={4}>
-                    <part>
+                    <div className="part">
                         {props.children[1]}
-                    </part>
+                    </div>
                 </Grid>
                 <Grid item xs={false} sm={false} md={2}></Grid>
             </Grid>

@@ -14,9 +14,9 @@ export default function CommandPopup(props) {
                                 <>
                                     <div style={{width: '50%', float: 'left'}}>
                                         {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia'].map((category) => (
-                                            <ListItem button onClick={() => {
-                                                window.location.hash = `#${encodeURI(category.toLowerCase())}`;
+                                            <ListItem key={category} button onClick={() => {
                                                 props.handleClose();
+                                                setTimeout(() => window.location.hash = `#${encodeURI(category.toLowerCase())}`, 1000);
                                             }}>
                                                 <ListItemText primary={category}/>
                                             </ListItem>
@@ -24,9 +24,9 @@ export default function CommandPopup(props) {
                                     </div>
                                     <div style={{width: '50%', float: 'left'}}>
                                         {['Tic Tac Toe', 'Warewolves', 'Fact', 'Fortune', 'Insult', 'Joke'].map((category) => (
-                                            <ListItem button onClick={() => {
-                                                window.location.hash = `#${encodeURI(category.toLowerCase())}`;
+                                            <ListItem key={category} button onClick={() => {
                                                 props.handleClose();
+                                                setTimeout(() =>  window.location.hash = `#${encodeURI(category.toLowerCase())}`, 1000);
                                             }}>
                                                 <ListItemText primary={category}/>
                                             </ListItem>
@@ -36,9 +36,9 @@ export default function CommandPopup(props) {
                             ) : (
                                 <div style={{width: '100%', float: 'left'}}>
                                     {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves', 'Fact', 'Fortune', 'Insult', 'Joke'].map((category) => (
-                                        <ListItem button onClick={() => {
-                                            window.location.hash = `#${encodeURI(category.toLowerCase())}`;
+                                        <ListItem key={category} button onClick={() => {
                                             props.handleClose();
+                                            setTimeout(() =>  window.location.hash = `#${encodeURI(category.toLowerCase())}`, 1000);
                                         }}>
                                             <ListItemText primary={category}/>
                                         </ListItem>

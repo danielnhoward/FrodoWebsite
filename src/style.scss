@@ -98,7 +98,7 @@ section {
     // width: 100vw;
     background-attachment: fixed;
 }
-section part {
+section .part {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,7 @@ section:nth-of-type(3) {
         min-height: var(--h);
         height: unset;
     }
-    section part {
+    section .part {
         display: block;
         min-height: auto;
         margin-top: 10px;
@@ -182,6 +182,7 @@ section:nth-of-type(3) {
 
 .commandPicture {
     width: 100%;
+    border-radius: 15px;
 }
 
 .frodoStats {

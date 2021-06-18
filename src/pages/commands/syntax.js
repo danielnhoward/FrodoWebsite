@@ -5,7 +5,8 @@ export default function CommandSyntax(props) {
     const [open, setOpen] = useState(false);
     function handleOpen() {
         setOpen(true);
-        props.onClick();
+        try {props.onClick()}
+        catch(err) {};
     };
     function handleClose() {
         setOpen(false);
@@ -24,7 +25,7 @@ export default function CommandSyntax(props) {
     return (
         <>
             <Button onClick={handleOpen} style={{padding: 0}}>
-                <div class="commandSyntax">
+                <div className="commandSyntax">
                     Command Syntax
                 </div>
             </Button>
@@ -34,11 +35,11 @@ export default function CommandSyntax(props) {
                         /{props.command.name}
                     </div>
                     {props.args.map((command, index) => (
-                        <>
+                        <span key={index}>
                             <Button onClick={click(index)} headerid={index} className="commandPopupText">
                                 {command.name}
                             </Button>
-                        </>
+                        </span>
                     ))}
                 </DialogTitle>
                 <DialogContent>
@@ -47,7 +48,7 @@ export default function CommandSyntax(props) {
                             {props.command.description}
                         </div>
                         {props.args.map((command, index) => (
-                            <div id={index} style={{display: 'none'}}>
+                            <div key={index} id={index} style={{display: 'none'}}>
                                 {command.description}
                             </div>
                         ))}
