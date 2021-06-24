@@ -10,6 +10,7 @@ app.use((req, res, next) => {
     else next();
 });
 
+
 app.get('*', (req, res) => {
     let url = req.url.split('?')[0];
     let file;
