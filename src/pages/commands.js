@@ -77,7 +77,7 @@ export default class Commands extends React.Component {
                     <div style={{textAlign: 'center'}}>
                         <Typography variant="h6"><b>Akinator</b></Typography>
                         <p>Uses the powerfull <a href="https://en.akinator.com" target="_blank" rel="noreferrer">Akinator AI</a> to guess anyone you are thinking of, all from within the discord chat!</p>
-                        <Typography variant="h7"><b>What is Akinator?</b></Typography>
+                        <Typography variant="caption"><b>What is Akinator?</b></Typography>
                         <p>Akinator is a game where you get asked a set of questions and the AI will try and guess what character you are thinking of!</p>
                         
                         <CommandSyntax
@@ -98,26 +98,45 @@ export default class Commands extends React.Component {
                 </Command>
                 <Command id="anagrams" command="two">
                     <div>
-                        <img className="commandPicture" alt="" src="/static/img/commands/anagrams.png"/>
+                        <Typography variant="h6"><b>Anagrams</b></Typography>
                     </div>
                     <div>
-                        <Typography variant="h6"><b>Anagrams</b></Typography>
+                        <img className="commandPicture" alt="" src="/static/img/commands/anagrams.png"/>
                     </div>
                 </Command>
                 <Command id="connect%20four" command="three">
-                    <div>
+                    <div style={{textAlign: 'center'}}>
                         <Typography variant="h6"><b>Connect Four</b></Typography>
+                        <p>Play connect four against your friends directly on discord!</p>
+
+                        <CommandSyntax
+                            command={{
+                                name: 'connectfour',
+                                description: (
+                                    <>
+                                        Connect four only takes one argument that is the other player that you would like to play with.
+                                    </>
+                                )
+                            }} args={[
+                                {
+                                    name: '<playertwo>',
+                                    description: (
+                                        <>
+                                            Selects the other player to play with, can't be a bot or you.
+                                        </>
+                                )},
+                            ]}/>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/connectfour.png"/>
                     </div>
                 </Command>
                 <Command id="hangman" command="four">
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <Typography variant="h6"><b>Hangman</b></Typography>
                     </div>
                     <div>
-                        <Typography variant="h6"><b>Hangman</b></Typography>
+                        <img alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="rock%20paper%20scissors" command="five">
@@ -129,9 +148,6 @@ export default class Commands extends React.Component {
                     </div>
                 </Command>
                 <Command id="trivia" command="six">
-                    <div>
-                        <img className="commandPicture" alt="" src="/static/img/commands/trivia.png"/>
-                    </div>
                     <div>
                         <Typography variant="h6"><b>Trivia</b></Typography>
                         <p>Trivia is a fun simple game where you get given a question. Trivia features multiple difficulties and categories. A full list of categories can be viewed <Button onClick={this.categoriesClick.bind(this)} style={{padding: 0}}>here</Button>.</p>
@@ -229,6 +245,9 @@ export default class Commands extends React.Component {
                                     )}
                         ]}/>
                     </div>
+                    <div>
+                        <img className="commandPicture" alt="" src="/static/img/commands/trivia.png"/>
+                    </div>
                 </Command>
                 <Command id="tic%20tac%20toe" command="seven">
                     <div>
@@ -240,10 +259,10 @@ export default class Commands extends React.Component {
                 </Command>
                 <Command id="warewolves" command="eight">
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <Typography variant="h6"><b>Warewolves</b></Typography>
                     </div>
                     <div>
-                        <Typography variant="h6"><b>Warewolves</b></Typography>
+                        <img alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="fact" command="nine">
@@ -256,10 +275,10 @@ export default class Commands extends React.Component {
                 </Command>
                 <Command id="fortune" command="ten">
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <Typography variant="h6"><b>Fortune</b></Typography>
                     </div>
                     <div>
-                        <Typography variant="h6"><b>Fortune</b></Typography>
+                        <img alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="insult" command="eleven">
@@ -272,10 +291,10 @@ export default class Commands extends React.Component {
                 </Command>
                 <Command id="joke" command="twelve">
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <Typography variant="h6"><b>Joke</b></Typography>
                     </div>
                     <div>
-                        <Typography variant="h6"><b>Joke</b></Typography>
+                        <img alt="" src="/logo192.png"/>
                     </div>
                 </Command>
             </>

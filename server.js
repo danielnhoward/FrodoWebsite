@@ -5,7 +5,8 @@ const pages = ['/', '/announcements', '/announcements/', '/feedback', '/feedback
 
 app.use((req, res, next) => {
     if ((req.get('X-Forwarded-Proto') !== 'https' && req.get('Host') === 'frodo.fun') || req.get('Host') === 'www.frodo.fun' || req.get('Host') === 'frodowebsite.herokuapp.com') return res.redirect(`https://frodo.fun${req.url}`);
-    else if (req.get('Host') === 'i.frodo.fun' || req.get('Host') === 'invite.frodo.fun') res.redirect('https://discord.com/api/oauth2/authorize?client_id=734746193082581084&permissions=268691536&redirect_uri=https%3A%2F%2Ffrodo.fun%2Fthanks&scope=bot%20applications.commands');
+    else if (req.get('Host') === 'i.frodo.fun' || req.get('Host') === 'invite.frodo.fun') res.redirect('https://discord.com/api/oauth2/authorize?client_id=734746193082581084&permissions=268691536&scope=bot%20applications.commands');
+    else if (req.get('Host') === 'slash.frodo.fun') req.redirect('https://discord.com/api/oauth2/authorize?client_id=734746193082581084&scope=applications.commands');
     else next();
 });
 

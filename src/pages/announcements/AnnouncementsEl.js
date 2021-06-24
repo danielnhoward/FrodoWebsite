@@ -21,12 +21,7 @@ export default function AnnouncementEl(props) {
                         })()
                     }/>
                     <CardContent>
-                        {/* <Typography style={{fontSize: 14}} color="textSecondary" gutterBottom>
-                            {time.getHours()}:{time.getMinutes()}, {time.getDate()} {months[time.getMonth()]} {time.getFullYear()}
-                        </Typography>
-                        <Typography component="h1">
-                            {data.title}
-                        </Typography> */}
+                        {data.content.body}
                     </CardContent>
                 </CardActionArea>
             </Card>
