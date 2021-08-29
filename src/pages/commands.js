@@ -77,7 +77,7 @@ export default class Commands extends React.Component {
                     <div style={{textAlign: 'center'}}>
                         <Typography variant="h6"><b>Akinator</b></Typography>
                         <p>Uses the powerfull <a href="https://en.akinator.com" target="_blank" rel="noreferrer">Akinator AI</a> to guess anyone you are thinking of, all from within the discord chat!</p>
-                        <Typography variant="caption"><b>What is Akinator?</b></Typography>
+                        <Typography variant="h6"><b>What is Akinator?</b></Typography>
                         <p>Akinator is a game where you get asked a set of questions and the AI will try and guess what character you are thinking of!</p>
                         
                         <CommandSyntax
@@ -136,7 +136,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Hangman</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="rock%20paper%20scissors" command="five">
@@ -144,7 +144,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Rock Paper Scissors</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="trivia" command="six">
@@ -254,7 +254,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Tic Tac Toe</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="warewolves" command="eight">
@@ -262,7 +262,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Warewolves</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="fact" command="nine">
@@ -270,7 +270,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Fact</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/fact.png"/>
                     </div>
                 </Command>
                 <Command id="fortune" command="ten">
@@ -278,7 +278,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Fortune</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/fortune.png"/>
                     </div>
                 </Command>
                 <Command id="insult" command="eleven">
@@ -286,7 +286,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Insult</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/logo192.png"/>
                     </div>
                 </Command>
                 <Command id="joke" command="twelve">
@@ -294,7 +294,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Joke</b></Typography>
                     </div>
                     <div>
-                        <img alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/joke.png"/>
                     </div>
                 </Command>
             </>

@@ -1,8 +1,7 @@
 export default function FirstSection() {
     return (
         <div className="center">
-            <img alt="Frodo Logo" src="/static/img/frodo-nobg.svg" className="logo-main"></img>
-            <h1>Frodo</h1>
+            <img alt="Frodo Logo" src="/static/img/logosNew/nobg-text.svg" className="logo-main"></img>
             <BotStatus></BotStatus>
         </div>
     );
