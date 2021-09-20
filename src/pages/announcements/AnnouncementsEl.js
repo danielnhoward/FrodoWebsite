@@ -2,8 +2,7 @@ import { Avatar, Card, CardActionArea, CardContent, CardHeader } from "@material
 import { Link } from "react-router-dom";
 
 export default function AnnouncementEl(props) {
-    const data = props.data;
-    const index = props.index;
+    const {data, index} = props;
     const time = new Date(data.timestamp);
     const today = new Date();
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];

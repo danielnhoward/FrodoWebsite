@@ -136,7 +136,7 @@ export default function Feedback() {
                 </div>
             </div>
             <div>
-                <img src="/static/img/frodo-nobg.svg" alt="" className="frodoPreview"/>
+                <img src="/static/img/logosNew/nobg.svg" alt="" className="logo-main"/>
             </div>
         </Section>
     );

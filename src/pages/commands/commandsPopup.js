@@ -23,7 +23,7 @@ export default function CommandPopup(props) {
                                         ))}
                                     </div>
                                     <div style={{width: '50%', float: 'left'}}>
-                                        {['Tic Tac Toe', 'Warewolves', 'Fact', 'Fortune', 'Insult', 'Joke'].map((category) => (
+                                        {['Tic Tac Toe', 'Othello', 'Fact', 'Fortune', 'Insult', 'Joke'].map((category) => (
                                             <ListItem key={category} button onClick={() => {
                                                 props.handleClose();
                                                 setTimeout(() =>  window.location.hash = `#${encodeURI(category.toLowerCase())}`, 1000);

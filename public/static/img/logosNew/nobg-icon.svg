@@ -37,6 +37,20 @@
      id="defs234">
     <style
        id="style232">.cls-1{isolation:isolate;}.cls-2,.cls-9{fill:none;}.cls-3{fill:#000029;}.cls-4{fill:#00ffef;}.cls-5{fill:#fff;}.cls-6{fill:#6c8cf9;}.cls-7{mix-blend-mode:multiply;}.cls-8{fill:#c5c7c9;}.cls-9{stroke:#000029;stroke-linecap:round;stroke-linejoin:round;stroke-width:3.54px;}.cls-10{fill:#c2c4c6;}.cls-11{fill:#b4b3c6;}.cls-12{fill:#fd1a17;}.cls-13{fill:#c0c2c4;}.cls-14{fill:#eb6e78;}.cls-15{fill:#f3aaa7;}.cls-16{fill:#fefefe;}</style>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3353">
+      <rect
+         style="fill:#00ffef;fill-opacity:1;stroke-width:0.499774"
+         id="rect3355"
+         width="210.60115"
+         height="210.57779"
+         x="106.10546"
+         y="20.210564"
+         inkscape:export-filename="S:\Documents\Programming\reactfrodowebsite\public\static\img\logosNew\nobg-icon.png"
+         inkscape:export-xdpi="24.576"
+         inkscape:export-ydpi="24.576" />
+    </clipPath>
   </defs>
   <g
      inkscape:groupmode="layer"
@@ -44,14 +58,7 @@
      inkscape:label="Layer 2"
      style="display:inline">
     <rect
-       style="fill:#ffffff"
-       id="rect2757"
-       width="498"
-       height="412"
-       x="-672"
-       y="-406" />
-    <rect
-       style="fill:#00ffef;fill-opacity:1;stroke-width:1.18696"
+       style="display:inline;fill:#00ffef;fill-opacity:1;stroke-width:1.18696"
        id="rect2444"
        width="500.17679"
        height="500.12131"
@@ -73,7 +80,8 @@
        style="isolation:isolate"
        inkscape:export-filename="S:\Documents\Programming\reactfrodowebsite\public\static\img\logosNew\nobg-icon.png"
        inkscape:export-xdpi="24.576"
-       inkscape:export-ydpi="24.576">
+       inkscape:export-ydpi="24.576"
+       clip-path="url(#clipPath3353)">
       <rect
          class="cls-2"
          width="432"
@@ -116,7 +124,7 @@
          id="path258" />
       <polygon
          class="cls-6"
-         points="161.98,168.29 158.64,199.6 209.54,199.6 209.54,122.69 173.03,122.69 "
+         points="158.64,199.6 209.54,199.6 209.54,122.69 173.03,122.69 161.98,168.29 "
          id="polygon260" />
       <path
          class="cls-6"
@@ -125,7 +133,7 @@
          id="path262" />
       <polygon
          class="cls-6"
-         points="257.1,168.29 260.44,199.6 209.54,199.6 209.54,122.69 246.05,122.69 "
+         points="260.44,199.6 209.54,199.6 209.54,122.69 246.05,122.69 257.1,168.29 "
          id="polygon264" />
       <path
          class="cls-6"
@@ -236,11 +244,11 @@
          id="ellipse306" />
       <polygon
          class="cls-3"
-         points="192.71,174.35 199.78,174.35 199.2,175.79 192.13,175.79 "
+         points="199.2,175.79 192.13,175.79 192.71,174.35 199.78,174.35 "
          id="polygon308" />
       <polygon
          class="cls-3"
-         points="195.43,173.38 197.52,173.38 196.48,176.89 194.39,176.89 "
+         points="196.48,176.89 194.39,176.89 195.43,173.38 197.52,173.38 "
          id="polygon310" />
       <ellipse
          class="cls-3"
@@ -607,5 +615,12 @@
          transform="translate(90)"
          id="path446" />
     </g>
+    <rect
+       style="fill:none"
+       id="rect1404"
+       width="500.17679"
+       height="500.12131"
+       x="-3.5140559e-07"
+       y="-1.4305115e-06" />
   </g>
 </svg>

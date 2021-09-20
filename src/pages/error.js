@@ -12,7 +12,7 @@ export default function Error(props) {
                 <p>The page: "{page}" couldn't be found. Please check the url is correct or you may have clicked a wrong link.</p>
             </div>
             <div>
-                <img src="/static/img/frodo-nobg.svg" alt="" className="frodoPreview"/>
+                <img src="/static/img/logosNew/nobg.svg" alt="" className="logo-main"/>
             </div>
         </Section>
     );

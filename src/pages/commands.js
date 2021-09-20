@@ -16,15 +16,6 @@ export default class Commands extends React.Component {
             categoriesFetched: false,
             categories: []
         };
-        document.querySelectorAll('a').forEach((el) => {
-            el.addEventListener('click', (ev) => {
-                if (ev.target?.href.incudes('/commands#')) {
-                    setTimeout(() => {
-                        document.getElementById(el.href.split('#')[1])?.scrollIntoView();
-                    }, 1000);
-                };
-            });
-        });
     };
 
     componentDidMount() {
@@ -128,7 +119,7 @@ export default class Commands extends React.Component {
                             ]}/>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/static/img/commands/connectfour.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/connect four.png"/>
                     </div>
                 </Command>
                 <Command id="hangman" command="four">
@@ -136,7 +127,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Hangman</b></Typography>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/hangman.png"/>
                     </div>
                 </Command>
                 <Command id="rock%20paper%20scissors" command="five">
@@ -144,7 +135,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Rock Paper Scissors</b></Typography>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/rps.png"/>
                     </div>
                 </Command>
                 <Command id="trivia" command="six">
@@ -254,15 +245,15 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Tic Tac Toe</b></Typography>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/ttt.png"/>
                     </div>
                 </Command>
-                <Command id="warewolves" command="eight">
+                <Command id="othello" command="eight">
                     <div>
-                        <Typography variant="h6"><b>Warewolves</b></Typography>
+                        <Typography variant="h6"><b>Othello</b></Typography>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/othello.png"/>
                     </div>
                 </Command>
                 <Command id="fact" command="nine">
@@ -286,7 +277,7 @@ export default class Commands extends React.Component {
                         <Typography variant="h6"><b>Insult</b></Typography>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/logo192.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/insult.png"/>
                     </div>
                 </Command>
                 <Command id="joke" command="twelve">

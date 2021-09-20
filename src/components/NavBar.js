@@ -149,7 +149,7 @@ export default function NavBar() {
                                 <List component="div" disablePadding>
                                     <Divider/>
                                     <Typography className={classes.menulist} style={{paddingTop: 10}}>Game Commads</Typography>
-                                    {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Warewolves'].map((game, index) => (
+                                    {['Akinator', 'Anagrams', 'Connect Four', 'Hangman', 'Rock Paper Scissors', 'Trivia', 'Tic Tac Toe', 'Othello'].map((game, index) => (
                                         <ListItem key={index} onClick={drawerItemClick} button component={Link} to={`/commands#${game.toLowerCase()}`} className={classes.subItem}>
                                             <ListItemText primary={game}/>
                                         </ListItem>
