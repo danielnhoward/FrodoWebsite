@@ -1,9 +1,32 @@
-const Topgg = require('@top-gg/sdk');
+import Topgg from '@top-gg/sdk';
+import fetch from 'node-fetch';
+import express from 'express';
+import http from 'http';
+import fs from 'fs';
+import {__dirname} from './dirname.cjs';
+
 const topggWebhook = new Topgg.Webhook(process.env.TOPGGAUTH);
 
-const app = require('express')();
-const server = require('http').createServer(app);
-const fs = require('fs');
+let votes = [];
+
+(async () => {
+    try {
+        const voters = await (await fetch('https://top.gg/api/bots/734746193082581084/votes', {
+            headers: {
+                "Authorization": process.env.TOPGGTOKEN,
+            }
+        })).json();
+        voters.forEach((user) => {
+            votes.push(user.id);
+        });
+    }
+    catch(err) {
+        votes = {error: true};
+    }
+})();
+
+const app = express();
+const server = http.createServer(app);
 const pages = ['/', '/announcements', '/announcements/', '/feedback', '/feedback/', '/commands', '/commands/', '/thanks', '/thanks/'];
 
 app.use((req, res, next) => {
@@ -18,7 +41,10 @@ app.get('*', (req, res) => {
     let url = req.url.split('?')[0];
     let file;
 
-    if (/\./.test(url) && !url.includes('index.html')) {
+    if (url == '/votes.json') {
+        return res.status(200).json(votes);
+    } 
+    else if (/\./.test(url) && !url.includes('index.html')) {
         file = `./build${url}`;
     }
     else {
@@ -35,8 +61,57 @@ app.get('*', (req, res) => {
     res.sendFile(fileExists ? `${__dirname}${file.replace('.', '')}` : `${__dirname}/build/index.html`);
 });
 
+let sockets = [];
+
 app.post('/api/votes', topggWebhook.listener((vote) => {
-    console.log(vote);
+    if (votes.error) return;
+    try {
+        votes.push(vote.user);
+        sockets.forEach((socket) => {
+            socket.send(JSON.stringify({payload: 'vote', user: vote.user}))
+        });
+    }
+    catch(err) {
+        votes = {error: true};
+    }
 }));
 
 server.listen(process.env.PORT || 80, () => console.log(`Server opened on port ${process.env.PORT || 80}`));
+
+
+import {WebSocketServer} from 'ws';
+const wsServer = new WebSocketServer({
+    port: 5000,
+});
+
+wsServer.on('connection', (socket) => {
+    socket.on('message', (message) => {
+        const [title, content] = message.toString().split(':');
+
+        switch (title) {
+            case 'init':
+                if (content === process.env.TOPGGAUTH) {
+                    sockets.push(socket);
+                    console.log(0)
+                }
+                else {
+                    socket.close();
+                }
+            break;
+            case 'votes':
+                if (sockets.includes(socket)) {
+                    console.log(1)
+                    socket.send(JSON.stringify({payload: 'votes', votes}));
+                }
+                else {
+                    console.log(2)
+                    socket.close();
+                }
+            break;
+        }
+    });
+
+    socket.on('close', () => {
+        sockets = sockets.filter(s => s !== socket);
+    });
+});
