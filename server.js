@@ -1,3 +1,6 @@
+const Topgg = require('@top-gg/sdk');
+const topggWebhook = new Topgg.Webhook(process.env.TOPGGAUTH);
+
 const app = require('express')();
 const server = require('http').createServer(app);
 const fs = require('fs');
@@ -31,5 +34,9 @@ app.get('*', (req, res) => {
     res.status(fileExists ? 200 : 404);
     res.sendFile(fileExists ? `${__dirname}${file.replace('.', '')}` : `${__dirname}/build/index.html`);
 });
+
+app.post('/api/votes', topggWebhook.listener((vote) => {
+    console.log(vote);
+}));
 
 server.listen(process.env.PORT || 80, () => console.log(`Server opened on port ${process.env.PORT || 80}`));
