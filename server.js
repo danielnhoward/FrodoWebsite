@@ -81,7 +81,7 @@ server.listen(process.env.PORT || 80, () => console.log(`Server opened on port $
 
 import {WebSocketServer} from 'ws';
 const wsServer = new WebSocketServer({
-    port: 5000,
+    server,
 });
 
 wsServer.on('connection', (socket) => {
