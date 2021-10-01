@@ -68,7 +68,7 @@ app.post('/api/votes', topggWebhook.listener((vote) => {
     try {
         votes.push(vote.user);
         sockets.forEach((socket) => {
-            socket.send(JSON.stringify({payload: 'vote', user: vote.user}))
+            socket.send(JSON.stringify({payload: 'vote', data: vote.user}))
         });
     }
     catch(err) {
@@ -85,6 +85,7 @@ const wsServer = new WebSocketServer({
 });
 
 wsServer.on('connection', (socket) => {
+    console.log('Web socket initiallised');
     socket.on('message', (message) => {
         const [title, content] = message.toString().split(':');
 
@@ -92,7 +93,7 @@ wsServer.on('connection', (socket) => {
             case 'init':
                 if (content === process.env.TOPGGAUTH) {
                     sockets.push(socket);
-                    console.log(0)
+                    socket.send(JSON.stringify({payload: 'Authed'}));
                 }
                 else {
                     socket.close();
@@ -100,11 +101,9 @@ wsServer.on('connection', (socket) => {
             break;
             case 'votes':
                 if (sockets.includes(socket)) {
-                    console.log(1)
-                    socket.send(JSON.stringify({payload: 'votes', votes}));
+                    socket.send(JSON.stringify({payload: 'votes', data: votes}));
                 }
                 else {
-                    console.log(2)
                     socket.close();
                 }
             break;
