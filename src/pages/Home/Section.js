@@ -83,7 +83,6 @@ export default function Section(props) {
             </section>
         );
     };
-    let section = [];
     return (
         <section>
             <Grid style={{width: '100%'}} container spacing={5}>

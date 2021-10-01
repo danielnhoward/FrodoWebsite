@@ -67,7 +67,7 @@ export default class Commands extends React.Component {
                 <Command id="akinator" command="one">
                     <div style={{textAlign: 'center'}}>
                         <Typography variant="h6"><b>Akinator</b></Typography>
-                        <p>Uses the powerfull <a href="https://en.akinator.com" target="_blank" rel="noreferrer">Akinator AI</a> to guess anyone you are thinking of, all from within the discord chat!</p>
+                        <p>Uses the powerfull <a href="https://en.akinator.com" target="_blank" rel="noreferrer">Akinator AI</a> to guess anyone you are thinking of, all from within the discord chat using simple reactions!</p>
                         <Typography variant="h6"><b>What is Akinator?</b></Typography>
                         <p>Akinator is a game where you get asked a set of questions and the AI will try and guess what character you are thinking of!</p>
                         
@@ -90,6 +90,18 @@ export default class Commands extends React.Component {
                 <Command id="anagrams" command="two">
                     <div>
                         <Typography variant="h6"><b>Anagrams</b></Typography>
+                        <p>Anagrams lets you play the classic countdown game as seen on TV! Once the command has been run, you must pick nine letters (vowels and consonants). Then you have 30 seconds to think of the longest word you can make up out of those letters. After 30 seconds, enter the longest word you have and check to see how well you did!</p>
+                        <CommandSyntax
+                            command={{
+                                name: 'anagrams',
+                                description: (
+                                    <>
+                                        Anagrams takes no arguments, just run the command and the game will start
+                                    </>
+                                )
+                            }}
+                            args={[]}
+                        />
                     </div>
                     <div>
                         <img className="commandPicture" alt="" src="/static/img/commands/anagrams.png"/>
@@ -98,14 +110,14 @@ export default class Commands extends React.Component {
                 <Command id="connect%20four" command="three">
                     <div style={{textAlign: 'center'}}>
                         <Typography variant="h6"><b>Connect Four</b></Typography>
-                        <p>Play connect four against your friends directly on discord!</p>
+                        <p>Play connect four against your friends directly on discord using reactions! We assume you know how to play but just incase the rules can be found here: <a href="https://www.gamesver.com/the-rules-of-connect-4-according-to-m-bradley-hasbro/" target="_blank" rel="noreferrer">gamesver.com/the-rules-of-connect-4-according-to-m-bradley-hasbro/</a></p>
 
                         <CommandSyntax
                             command={{
                                 name: 'connectfour',
                                 description: (
                                     <>
-                                        Connect four only takes one argument that is the other player that you would like to play with.
+                                        Connect four only takes one argument that is the other player that you would like to play with
                                     </>
                                 )
                             }} args={[
@@ -113,26 +125,75 @@ export default class Commands extends React.Component {
                                     name: '<playertwo>',
                                     description: (
                                         <>
-                                            Selects the other player to play with, can't be a bot or you.
+                                            Selects the other player to play with, can't be a bot or you
                                         </>
                                 )},
                             ]}/>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/static/img/commands/connect four.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/ConnectFour.png"/>
                     </div>
                 </Command>
                 <Command id="hangman" command="four">
                     <div>
                         <Typography variant="h6"><b>Hangman</b></Typography>
+                        <p>Play the simple game with your friends!</p>
+                        <Typography variant="h6"><b>How to play</b></Typography>
+                        <p>
+                            <ol>
+                                <li>Run the command and select the user that you would like to be guessing your word</li>
+                                <li>Look at your dms, you should have a message from Frodo and reply to the message with the word you would like to select (any spaces entered will be removed)</li>
+                                <li>The person you selected can start entering in letters to guess your work</li>
+                                <li>If you would like to stop playing, click the reaction on the message and the game will stop</li>
+                            </ol>
+                        </p>
+
+                        <CommandSyntax
+                            command={{
+                                name: 'hangman',
+                                description: (
+                                    <>
+                                        Hangman takes one argument that is the user that you would like to be guessing your word
+                                    </>
+                                )
+                            }} args={[
+                                {
+                                    name: '<playertwo>',
+                                    description: (
+                                        <>
+                                            Selects the other player to play with, can't be a bot or you
+                                        </>
+                                )},
+                            ]}/>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/static/img/commands/hangman.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/Hangman.png"/>
                     </div>
                 </Command>
                 <Command id="rock%20paper%20scissors" command="five">
                     <div>
                         <Typography variant="h6"><b>Rock Paper Scissors</b></Typography>
+                        <p>
+                            Doesn't need much of a description! Just run the command and look at both of your dms, and simply react what you would like to do
+                        </p>
+                        
+                        <CommandSyntax
+                            command={{
+                                name: 'rps',
+                                description: (
+                                    <>
+                                        Rps takes one argument that is the user that you would to play Rock Paper Scissors with
+                                    </>
+                                )
+                            }} args={[
+                                {
+                                    name: '<playertwo>',
+                                    description: (
+                                        <>
+                                            Selects the other player to play with, can't be a bot or you
+                                        </>
+                                )},
+                            ]}/>
                     </div>
                     <div>
                         <img className="commandPicture" alt="" src="/static/img/commands/rps.png"/>
@@ -185,7 +246,7 @@ export default class Commands extends React.Component {
                             )}
                         </Collapse>
                         <p>
-                            Trivia works by using an api at <a href="https://opentdb.com/">https://opentdb.com/</a>
+                            Trivia works by using a powerfull api at <a href="https://opentdb.com/">https://opentdb.com/</a>
                         </p>
                         <CommandSyntax
                             onClick={this.collectCommands.bind(this)}
@@ -197,6 +258,7 @@ export default class Commands extends React.Component {
                                         <div className="commandsCode">
                                             <code>/trivia</code> - Generates a trivia question from a random difficulty and random category<br/>
                                             <code>/trivia &#60;difficulty&#62;</code> - Generates a trivia question from a selected difficulty and random category<br/>
+                                            <code>/trivia &#60;category&#62;</code> - Generates a trivia question from a selected category and random difficulty<br/>
                                             <code>/trivia &#60;difficulty&#62; &#60;category&#62;</code> - Generates a trivia question from a selected difficulty and selected category
                                         </div>
                                     </>
@@ -243,6 +305,25 @@ export default class Commands extends React.Component {
                 <Command id="tic%20tac%20toe" command="seven">
                     <div>
                         <Typography variant="h6"><b>Tic Tac Toe</b></Typography>
+                        <p>Simply play Tic Tac Toe with another player using reactions!</p>
+
+                        <CommandSyntax
+                            command={{
+                                name: 'ttt',
+                                description: (
+                                    <>
+                                        Ttt takes one argument that is the user that you would to play Tic Tac Toe with
+                                    </>
+                                )
+                            }} args={[
+                                {
+                                    name: '<playertwo>',
+                                    description: (
+                                        <>
+                                            Selects the other player to play with, can't be a bot or you
+                                        </>
+                                )},
+                            ]}/>
                     </div>
                     <div>
                         <img className="commandPicture" alt="" src="/static/img/commands/ttt.png"/>
@@ -251,6 +332,38 @@ export default class Commands extends React.Component {
                 <Command id="othello" command="eight">
                     <div>
                         <Typography variant="h6"><b>Othello</b></Typography>
+                        <p>
+                            Play Othello inside Discord! Frodo's othello also has helpful features that can tell you your possible options for you to use
+                        </p>
+                        <Typography variant="h6"><b>How to play Othello</b></Typography>
+                        <p>
+                            A very useful guide to othello can be found on WikiHow here: <a href="https://www.wikihow.com/Play-Othello" target="_blank" rel="noreferrer">https://www.wikihow.com/Play-Othello</a>
+                        </p>
+
+                        <CommandSyntax
+                            command={{
+                                name: 'othello',
+                                description: (
+                                    <>
+                                        Othello takes two arguments, playertwo and showmoves
+                                    </>
+                                )
+                            }} args={[
+                                {
+                                    name: '<playertwo>',
+                                    description: (
+                                        <>
+                                            Selects the other player to play othello with, can't be a bot or you
+                                        </>
+                                )},
+                                {
+                                    name: '<showmoves>',
+                                    description: (
+                                        <>
+                                            If set to true, while the game is running, both players will be able to see moves that they can do. This feature is intended for non-experienced players
+                                        </>
+                                    )}
+                            ]}/>
                     </div>
                     <div>
                         <img className="commandPicture" alt="" src="/static/img/commands/othello.png"/>
