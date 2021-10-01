@@ -366,7 +366,7 @@ export default class Commands extends React.Component {
                             ]}/>
                     </div>
                     <div>
-                        <img className="commandPicture" alt="" src="/static/img/commands/othello.png"/>
+                        <img className="commandPicture" alt="" src="/static/img/commands/Othello.png"/>
                     </div>
                 </Command>
                 <Command id="fact" command="nine">
