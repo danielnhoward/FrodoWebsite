@@ -90,23 +90,25 @@ wsServer.on('connection', (socket) => {
         const [title, content] = message.toString().split(':');
 
         switch (title) {
-            case 'init':
-                if (content === process.env.TOPGGAUTH) {
-                    sockets.push(socket);
-                    socket.send(JSON.stringify({payload: 'Authed'}));
-                }
-                else {
-                    socket.close();
-                }
-            break;
-            case 'votes':
-                if (sockets.includes(socket)) {
-                    socket.send(JSON.stringify({payload: 'votes', data: votes}));
-                }
-                else {
-                    socket.close();
-                }
-            break;
+        case 'init':
+            if (content === process.env.TOPGGAUTH) {
+                sockets.push(socket);
+                socket.send(JSON.stringify({payload: 'Authed'}));
+            }
+            else {
+                socket.close();
+            }
+        break;
+        case 'votes':
+            if (sockets.includes(socket)) {
+                socket.send(JSON.stringify({payload: 'votes', data: votes}));
+            }
+            else {
+                socket.close();
+            }
+        break;
+        case 'ping':
+            socket.send(JSON.stringify({payload: 'pong'}));
         }
     });
 
