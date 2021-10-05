@@ -4,10 +4,12 @@ import express from 'express';
 import http from 'http';
 import fs from 'fs';
 import {__dirname} from './dirname.cjs';
+import atob from 'atob';
 
 const topggWebhook = new Topgg.Webhook(process.env.TOPGGAUTH);
 
 let votes = [];
+let leaderboard = [];
 
 (async () => {
     try {
@@ -27,7 +29,7 @@ let votes = [];
 
 const app = express();
 const server = http.createServer(app);
-const pages = ['/', '/announcements', '/announcements/', '/feedback', '/feedback/', '/commands', '/commands/', '/thanks', '/thanks/'];
+const pages = ['/', '/announcements', '/announcements/', '/feedback', '/feedback/', '/commands', '/commands/', '/thanks', '/thanks/', '/leaderboard', '/leaderboard/'];
 
 app.use((req, res, next) => {
     if ((req.get('X-Forwarded-Proto') !== 'https' && req.get('Host') === 'frodo.fun') || req.get('Host') === 'www.frodo.fun' || req.get('Host') === 'frodowebsite.herokuapp.com') return res.redirect(`https://frodo.fun${req.url}`);
@@ -45,7 +47,10 @@ app.get('*', (req, res) => {
 
     if (url == '/votes.json') {
         return res.status(200).json(votes);
-    } 
+    }
+    else if (url == '/leaderboard.json') {
+        return res.status(200).json(leaderboard);
+    }
     else if (/\./.test(url) && !url.includes('index.html')) {
         file = `./build${url}`;
     }
@@ -91,8 +96,7 @@ wsServer.on('connection', (socket) => {
     socket.on('message', (message) => {
         const [title, content] = message.toString().split(':');
 
-        switch (title) {
-        case 'init':
+        if (title === 'init') {
             if (content === process.env.TOPGGAUTH) {
                 sockets.push(socket);
                 socket.send(JSON.stringify({payload: 'Authed'}));
@@ -100,7 +104,13 @@ wsServer.on('connection', (socket) => {
             else {
                 socket.close();
             }
-        break;
+        }
+        else {
+            if (!sockets.includes(socket)) {
+                return socket.close();
+            }
+        }
+        switch (title) {
         case 'votes':
             if (sockets.includes(socket)) {
                 socket.send(JSON.stringify({payload: 'votes', data: votes}));
@@ -111,6 +121,10 @@ wsServer.on('connection', (socket) => {
         break;
         case 'ping':
             socket.send(JSON.stringify({payload: 'pong'}));
+
+            try {
+                leaderboard = JSON.parse(atob(content));
+            } catch(err) {}
         }
     });
 

@@ -28,6 +28,13 @@ export default function Section(props) {
             </section>
         );
     };
+    if (props.nonResponsiveLeaderboard) {
+        return (
+            <section style={{overflow: 'auto', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed'}}>
+                {props.children}
+            </section>
+        );
+    };
     if (props.one) {
         return (
             <section>

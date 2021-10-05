@@ -61,6 +61,22 @@ h1 {
     position: absolute;
 }
 
+.leaderboardList {
+    padding-left: 500px;
+    padding-right: 500px;
+}
+@media only screen and (max-width: 1700px) {
+    .leaderboardList {
+        padding-left: 450px;
+        padding-right: 450px;
+    }
+}
+@media only screen and (max-width: 1500px) {
+    .leaderboardList {
+        padding-left: 300px;
+        padding-right: 300px;
+    }
+}
 @media only screen and (max-width: 959px) {
     .frodoPreview {
         width: 300px;
@@ -74,6 +90,10 @@ h1 {
     .pp {
         width: 35vmin;
         height: 35vmin;
+    }
+    .leaderboardList {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -125,6 +145,7 @@ section:nth-of-type(3) {
     background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
+
 @media only screen and (max-width: 959px) {
     section {
         overflow: visible;
@@ -138,10 +159,6 @@ section:nth-of-type(3) {
         margin-bottom: 10px;
         margin-left: 30px;
         margin-right: -9px;
-    }
-    .announmentBody {
-        overflow: visible;
-        min-height: 100vh;
     }
 }
 
@@ -244,4 +261,19 @@ a {
     border-radius: 5px;
     font-size: small;
     margin-top: 5px;
+}
+
+.leaderboardPfp {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: inline;
+}
+.username {
+    display: inline;
+    padding-top: -10px;
+}
+.user {
+    text-align: center;
 }

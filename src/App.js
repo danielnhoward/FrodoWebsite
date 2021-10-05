@@ -7,6 +7,7 @@ import Feedback from './pages/Feedback.js';
 import Error from './pages/error.js';
 import Commands from './pages/commands.js';
 import Thanks from './pages/Thanks.js';
+import Leaderboard from './pages/Leaderboard.js';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
                 </Route>
                 <Route path="/commands/" exact>
                     <Commands/>
+                </Route>
+                <Route path="/leaderboard/" exact>
+                    <Leaderboard/>
                 </Route>
                 <Route path="/thanks">
                     <Thanks/>

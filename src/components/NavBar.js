@@ -5,7 +5,7 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import MemoryIcon from '@material-ui/icons/Memory';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import AnnouncementIcon from '@material-ui/icons/Announcement';
+import LeaderboardIcon from '@material-ui/icons/TableChart';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import { useState } from 'react';
 import HideOnSroll from './HideOnScroll';
@@ -97,8 +97,8 @@ export default function NavBar() {
                                 </MenuList>
                             </Menu>
                         </Typography>
-                        <Typography variant="h6" className={classes.option} component={Link} to="/announcements">
-                            <Button>Announcements</Button>
+                        <Typography variant="h6" className={classes.option} component={Link} to="/leaderboard">
+                            <Button>Leaderboard</Button>
                         </Typography>
                         <Typography variant="h6" className={classes.option} component={Link} to="/feedback">
                             <Button>Feedback/Report Problem</Button>
@@ -166,11 +166,11 @@ export default function NavBar() {
                             </Collapse>
                             <ListItem key={3} onClick={drawerItemClick} button  component={Link} to="/announcements">
                                 <ListItemIcon>
-                                    <AnnouncementIcon/>
+                                    <LeaderboardIcon/>
                                 </ListItemIcon>
-                                <ListItemText primary="Announcements"/>
+                                <ListItemText primary="Leaderboard"/>
                             </ListItem>
-                            <ListItem key={4} onClick={drawerItemClick} button component={Link} to="/feedback">
+                            <ListItem key={4} onClick={drawerItemClick} button component={Link} to="/leaderboard">
                                 <ListItemIcon>
                                     <ReportProblemIcon/>
                                 </ListItemIcon>
