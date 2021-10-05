@@ -164,7 +164,7 @@ export default function NavBar() {
                                     <Divider/>
                                 </List>
                             </Collapse>
-                            <ListItem key={3} onClick={drawerItemClick} button  component={Link} to="/announcements">
+                            <ListItem key={3} onClick={drawerItemClick} button  component={Link} to="/leaderboard">
                                 <ListItemIcon>
                                     <LeaderboardIcon/>
                                 </ListItemIcon>
