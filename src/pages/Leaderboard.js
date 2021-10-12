@@ -60,7 +60,7 @@ export default class Leaderboard extends React.Component {
                                     <ListItem>
                                         <ListItemAvatar>
                                             <Avatar src={user.avatar ? user.avatar : 'https://cdn.discordapp.com/embed/avatars/0.png'}>
-                                                <Avatar src="https://cdn.discordapp.com/embed/avatars/0.png"/>
+                                                <Avatar alt={user.username} src="https://cdn.discordapp.com/embed/avatars/0.png"/>
                                             </Avatar>
                                         </ListItemAvatar>
                                         <ListItemText primary={user.username} secondary={`Current Score: ${user.score}`}/>
