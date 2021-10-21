@@ -170,7 +170,7 @@ export default function NavBar() {
                                 </ListItemIcon>
                                 <ListItemText primary="Leaderboard"/>
                             </ListItem>
-                            <ListItem key={4} onClick={drawerItemClick} button component={Link} to="/leaderboard">
+                            <ListItem key={4} onClick={drawerItemClick} button component={Link} to="/feedback">
                                 <ListItemIcon>
                                     <ReportProblemIcon/>
                                 </ListItemIcon>
